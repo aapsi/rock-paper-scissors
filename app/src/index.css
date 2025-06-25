@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-retroBg min-h-screen text-retroAccent font-retro;
+    letter-spacing: 1px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-retroPink hover:bg-retroYellow text-retroBg font-retro border-4 border-retroBlue py-2 px-4 rounded-lg transition-colors duration-200 shadow-lg;
+    text-shadow: 1px 1px 0 #fff200, 2px 2px 0 #00eaff;
+  }
+  
+  .btn-secondary {
+    @apply bg-retroBlue hover:bg-retroGreen text-retroBg font-retro border-4 border-retroPink py-2 px-4 rounded-lg transition-colors duration-200 shadow-lg;
+    text-shadow: 1px 1px 0 #fff200, 2px 2px 0 #ff4ecd;
+  }
+  
+  .card {
+    @apply bg-retroPanel border-4 border-retroYellow rounded-xl p-6 shadow-2xl font-retro text-retroAccent;
+    box-shadow: 0 0 0 4px #00eaff, 0 8px 32px 0 #0008;
+  }
+  
+  .input-field {
+    @apply bg-retroBg border-4 border-retroPink rounded-lg px-4 py-2 text-retroAccent placeholder-retroPink focus:outline-none focus:ring-2 focus:ring-retroBlue font-retro;
+    letter-spacing: 1px;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-wiggle {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ConnectKit Button Retro Styling */
+[data-ck-button] {
+  @apply bg-retroPink hover:bg-retroYellow text-retroBg font-retro border-4 border-retroBlue py-2 px-4 rounded-lg transition-colors duration-200 shadow-lg !important;
+  text-shadow: 1px 1px 0 #fff200, 2px 2px 0 #00eaff !important;
+  letter-spacing: 1px !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+[data-ck-button]:hover {
+  @apply bg-retroYellow text-retroBg !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 20px #00eaff !important;
+}
+
+/* ConnectKit Modal Retro Styling */
+[data-ck-modal] {
+  @apply bg-retroPanel border-4 border-retroYellow rounded-xl shadow-2xl !important;
+  box-shadow: 0 0 0 4px #00eaff, 0 8px 32px 0 #0008 !important;
+}
+
+[data-ck-modal] * {
+  @apply font-retro text-retroAccent !important;
+  letter-spacing: 1px !important;
+}
+
+/* ConnectKit Wallet Options */
+[data-ck-wallet-option] {
+  @apply bg-retroBg border-4 border-retroPink rounded-lg hover:border-retroBlue transition-colors duration-200 !important;
+}
+
+[data-ck-wallet-option]:hover {
+  @apply bg-retroPanel !important;
+  transform: scale(1.02) !important;
+  box-shadow: 0 0 15px #ff4ecd !important;
+} 
